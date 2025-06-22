@@ -1,0 +1,7 @@
+name: Workflow 64
+on: [push]
+jobs:
+  build_64:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running workflow 64"

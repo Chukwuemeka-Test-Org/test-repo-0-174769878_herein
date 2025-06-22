@@ -1,0 +1,7 @@
+name: Workflow 24
+on: [push]
+jobs:
+  build_24:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running workflow 24"

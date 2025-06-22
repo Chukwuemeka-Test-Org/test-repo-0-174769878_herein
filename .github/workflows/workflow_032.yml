@@ -1,0 +1,7 @@
+name: Workflow 32
+on: [push]
+jobs:
+  build_32:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running workflow 32"

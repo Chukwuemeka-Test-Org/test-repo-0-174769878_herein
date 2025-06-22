@@ -1,0 +1,7 @@
+name: Workflow 18
+on: [push]
+jobs:
+  build_18:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running workflow 18"
