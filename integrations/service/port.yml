@@ -1,0 +1,17 @@
+identifier: example-service
+title: Example Service
+blueprint: githubRepository
+properties:
+  description: "A sample Python microservice managed via GitOps"
+  owner: dev-team
+  repository: https://github.com/Chukwuemeka-Test-Org/test-repo-0-174769878_herein
+  readme: file://../README.md
+                
+identifier: example-service
+title: Example Service
+blueprint: githubRepository
+properties:
+  description: "Not a sample Python microservice"
+  owner: prod-team
+  repository: https://github.com/Chukwuemeka-Test-Org/test-repo-0-174769878_herein
+  readme: file://../README.md
