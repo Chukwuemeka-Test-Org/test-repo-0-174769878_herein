@@ -9,7 +9,7 @@ paramiko==2.4.2
 cryptography==2.3
 chardet==3.0.2
 idna==2.6
-tornado==4.5.3
+tornado==6.5.2
 pillow==6.2.0
 bleach==3.1.0
 jinja2==2.10
