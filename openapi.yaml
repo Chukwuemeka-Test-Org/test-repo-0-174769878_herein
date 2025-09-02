@@ -1,26 +1,45 @@
 openapi: "3.0.0"
 info:
   title: Insecure API Demo
-  version: "1.0"
+  version: "1.0.0"
+  description: |
+    Example OpenAPI spec to demonstrate API Security scanning in Checkmarx.
+    Endpoints intentionally contain insecure patterns.
+
+servers:
+  - url: http://localhost:5000
+
 paths:
   /secure-data:
     get:
+      summary: Retrieve secure data (insecure implementation)
+      description: |
+        This endpoint uses a weak query parameter token for authentication.
       parameters:
         - in: query
           name: token
           required: false
           schema:
             type: string
+          description: Insecure query parameter used as auth token
       responses:
         "200":
           description: OK
+        "401":
+          description: Unauthorized
+
   /load:
     post:
+      summary: Load serialized data (insecure deserialization)
+      description: |
+        This endpoint deserializes arbitrary input using pickle, which is unsafe.
       requestBody:
+        required: true
         content:
           application/octet-stream:
             schema:
               type: string
+              format: binary
       responses:
         "200":
-          description: OK
+          description: Loaded object
