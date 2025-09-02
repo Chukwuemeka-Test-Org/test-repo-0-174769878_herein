@@ -4,7 +4,8 @@ info:
   version: "1.0.0"
   description: |
     Example OpenAPI spec to demonstrate API Security scanning in Checkmarx.
-    Endpoints intentionally contain insecure patterns.
+    Endpoints intentionally contain insecure patterns (hardcoded keys, weak auth,
+    SQL injection, and insecure deserialization).
 
 servers:
   - url: http://localhost:5000
@@ -43,3 +44,22 @@ paths:
       responses:
         "200":
           description: Loaded object
+
+  /user-data:
+    get:
+      summary: Get user data (SQL injection vulnerable)
+      description: |
+        This endpoint is vulnerable because it directly interpolates the "id"
+        query parameter into a SQL query without sanitization.
+      parameters:
+        - in: query
+          name: id
+          required: true
+          schema:
+            type: string
+          description: User ID (unsanitized; potential SQL injection vector)
+      responses:
+        "200":
+          description: User data
+        "400":
+          description: Bad request
