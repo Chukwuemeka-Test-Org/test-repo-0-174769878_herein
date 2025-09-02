@@ -1,0 +1,26 @@
+openapi: "3.0.0"
+info:
+  title: Insecure API Demo
+  version: "1.0"
+paths:
+  /secure-data:
+    get:
+      parameters:
+        - in: query
+          name: token
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+  /load:
+    post:
+      requestBody:
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
