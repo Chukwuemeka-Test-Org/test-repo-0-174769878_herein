@@ -1,0 +1,25 @@
+- identifier: '.__repository + "-" + .name'
+  title: .name
+  blueprint: '"githubRepoEnvironment"'
+  properties:
+    url: .html_url
+    customBranchesPolicies: if .custom_branches_policies then .custom_branches_policies else false end
+    protectedBranches: if .protected_branches then .protected_branches else false end
+    createdAt: .created_at
+    updatedAt: .updated_at
+  relations:
+    repository: .__repository
+
+- identifier: '.__repository + "-" + (.id|tostring)'
+  title: '.task + "-" + .environment'
+  blueprint: '"deployment"'
+  properties:
+    description: if .description then .description else "" end
+    ref: .ref
+    sha: .sha
+    productionEnvironment: .production_environment
+    transientEnvironment: .transient_environment
+    createdAt: .created_at
+    url: .url
+  relations:
+    runningService: '.__repository + "-" + .environment'
