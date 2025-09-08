@@ -1,0 +1,7 @@
+identifier: .name
+title: .name
+blueprint: '"tag"'
+properties:
+  commit_sha: .commit.sha
+relations:
+  repository: .__repository
