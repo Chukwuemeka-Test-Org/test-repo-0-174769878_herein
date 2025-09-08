@@ -1,7 +1,7 @@
-identifier: .name
-title: .name
+identifier: myTag
+title: My Tag
 blueprint: tag
 properties:
-  commit_sha: .commit.sha
+  commit_sha: sha2323244
 relations:
-  repository: .__repository
+  repository: test-repo-0-174769878_herein
