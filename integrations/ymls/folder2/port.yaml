@@ -6,4 +6,4 @@ properties:
   customBranchesPolicies: true
   protectedBranches: false
 relations:
-  repository: .__repository
+  repository: test-repo-0-174769878_herein
