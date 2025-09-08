@@ -1,6 +1,6 @@
 identifier: .name
 title: .name
-blueprint: '"tag"'
+blueprint: tag
 properties:
   commit_sha: .commit.sha
 relations:
