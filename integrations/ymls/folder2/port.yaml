@@ -1,6 +1,6 @@
 identifier: '.__repository + "-" + .name'
 title: .name
-blueprint: '"githubRepoEnvironment"'
+blueprint: githubRepoEnvironment
 properties:
   url: .html_url
   customBranchesPolicies: if .custom_branches_policies then .custom_branches_policies else false end
