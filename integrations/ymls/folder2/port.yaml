@@ -1,11 +1,9 @@
-identifier: '.__repository + "-" + .name'
-title: .name
+identifier: myRunningEnv
+title: My Running Env
 blueprint: githubRepoEnvironment
 properties:
-  url: .html_url
-  customBranchesPolicies: if .custom_branches_policies then .custom_branches_policies else false end
-  protectedBranches: if .protected_branches then .protected_branches else false end
-  createdAt: .created_at
-  updatedAt: .updated_at
+  url: https://example.com
+  customBranchesPolicies: true
+  protectedBranches: false
 relations:
   repository: .__repository
